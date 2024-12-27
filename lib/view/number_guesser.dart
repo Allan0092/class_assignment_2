@@ -22,7 +22,11 @@ class NumberGuesser extends StatelessWidget {
           SizedBox(
             height: 20,
           ),
-          ElevatedButton(onPressed: () {}, child: Text("Submit")),
+          ElevatedButton(
+              onPressed: () {
+                context.read<NumberGuesserCubit>().resultCheck(userInput.text);
+              },
+              child: Text("Submit")),
           SizedBox(height: 30),
           BlocBuilder<NumberGuesserCubit, String>(builder: (context, state) {
             return Text(state);
