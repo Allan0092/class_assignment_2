@@ -8,13 +8,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class DashboardCubit extends Cubit<void> {
-  DashboardCubit(
-      this._areaOfCircleCubit, this._simpleInterestCubit, this._numberGuesser)
+  DashboardCubit(this._areaOfCircleCubit, this._simpleInterestCubit,
+      this._numberGuesserCubit)
       : super(null);
 
   final AreaOfCircleCubit _areaOfCircleCubit;
   final SimpleInterestCubit _simpleInterestCubit;
-  final NumberGuesserCubit _numberGuesser;
+  final NumberGuesserCubit _numberGuesserCubit;
 
   void openAreaOfCircleView(BuildContext context) {
     Navigator.push(
@@ -42,7 +42,7 @@ class DashboardCubit extends Cubit<void> {
       context,
       MaterialPageRoute(
         builder: (_) => BlocProvider.value(
-          value: _numberGuesser,
+          value: _numberGuesserCubit,
           child: NumberGuesser(),
         ),
       ),

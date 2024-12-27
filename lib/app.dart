@@ -16,7 +16,12 @@ class MyApp extends StatelessWidget {
         BlocProvider(
           create: (context) => AreaOfCircleCubit(),
         ),
-        BlocProvider(create: (context) => SimpleInterestCubit()),
+        BlocProvider(
+          create: (context) => SimpleInterestCubit(),
+        ),
+        BlocProvider(
+          create: (context) => NumberGuesserCubit(),
+        ),
         BlocProvider(
           create: (context) => DashboardCubit(
             context.read<AreaOfCircleCubit>(),

@@ -43,9 +43,11 @@ class DashboardView extends StatelessWidget {
           ),
           Card(
             child: InkWell(
-              onTap: () {},
+              onTap: () {
+                context.read<DashboardCubit>().openNumberGuesser(context);
+              },
               child: Column(
-                children: [Icon(Icons.access_alarm)],
+                children: [Icon(Icons.question_mark), Text("Number Guesser")],
               ),
             ),
           )
