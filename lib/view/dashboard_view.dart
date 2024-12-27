@@ -18,7 +18,7 @@ class DashboardView extends StatelessWidget {
           Card(
             child: InkWell(
               onTap: () {
-                context.read<DashboardCubit>().openAreaOfCircleView(context);
+                context.read<DashboardCubit>().openSimpleInterest(context);
               },
               child: Column(
                 children: [
@@ -30,7 +30,9 @@ class DashboardView extends StatelessWidget {
           ),
           Card(
             child: InkWell(
-              onTap: () {},
+              onTap: () {
+                context.read<DashboardCubit>().openAreaOfCircleView(context);
+              },
               child: Column(
                 children: [
                   Icon(Icons.pie_chart_outline_outlined),
